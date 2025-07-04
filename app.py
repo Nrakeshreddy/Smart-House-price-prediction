@@ -23,7 +23,7 @@ crime_model = joblib.load("crime_rate_model.pkl")
 employment_model = joblib.load("employment_rate_model.pkl")
 
 # Load dataset
-csv_path = "C:\\Users\\rakes\\OneDrive\\Documents\\hpp.csv"
+csv_path = "hpp.csv"
 data = pd.read_csv(csv_path)
 
 # Dropdown values
