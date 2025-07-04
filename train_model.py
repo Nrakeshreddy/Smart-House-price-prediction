@@ -8,7 +8,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
-file_path = "C:\\Users\\rakes\\OneDrive\\Documents\\hpp.csv"
+file_path = "hpp.csv"
 data = pd.read_csv(file_path)
 
 numerical_features = ["NumRooms", "SquareFootage"]
