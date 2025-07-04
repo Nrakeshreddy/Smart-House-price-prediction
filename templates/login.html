@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | House Price Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGaO0Rmt7APvun5Yga9rUaWSvSJ0lDkIfDcg&s');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      backdrop-filter: brightness(0.9);
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .box {
+      padding: 20px;
+      border: 2px solid #90ee90;
+      border-radius: 10px;
+      width: 300px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .wave-text {
+      font-size: 32px;
+      color: #90ee90;
+      display: inline-block;
+      text-shadow: 0 0 8px #90ee90, 0 0 15px #90ee90;
+    }
+
+    .wave-text span {
+      display: inline-block;
+      animation: wave 1.5s infinite;
+      animation-delay: calc(0.1s * var(--i));
+    }
+
+    @keyframes wave {
+      0%, 60%, 100% {
+        transform: translateY(0);
+      }
+      30% {
+        transform: translateY(-10px);
+      }
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #90ee90;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #90ee90;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 0 8px #90ee90, 0 0 12px #90ee90;
+    }
+
+    button:hover {
+      background-color: #76d976;
+    }
+
+    p {
+      color: #333;
+    }
+
+    a {
+      color: #90ee90;
+      text-decoration: none;
+      text-shadow: 0 0 5px #90ee90;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <h2 class="wave-text">
+        <span style="--i:1">L</span>
+        <span style="--i:2">o</span>
+        <span style="--i:3">g</span>
+        <span style="--i:4">i</span>
+        <span style="--i:5">n</span>
+      </h2>
+      <form action="{{ url_for('login') }}" method="POST">
+        <input type="email" id="email" name="email" placeholder="Email" required /><br />
+        <input type="password" id="password" name="password" placeholder="Password" required /><br />
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign Up</a></p>
+    </div>
+  </div>
+</body>
+</html>

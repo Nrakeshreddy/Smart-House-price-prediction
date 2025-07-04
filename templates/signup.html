@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | House Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS5C77Wgl9YI8lRHDMSrhVYCUxl0dH-uLGXg&s');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+
+        .box {
+            padding: 20px;
+            border: 2px solid #b5651d; /* Light brown border */
+            border-radius: 10px;
+            width: 300px;
+            background-color: rgba(211, 211, 211, 0.7); /* Light grey color with transparency */
+            box-shadow: 0 0 10px rgba(182, 101, 29, 0.6); /* Glowing light brown shadow */
+            transition: all 0.3s ease;
+        }
+
+        h2 {
+            color: #b5651d; /* Light brown color for Sign Up heading */
+            text-shadow: 0 0 10px #b5651d; /* Glow effect for heading */
+            animation: moveText 5s ease-in-out infinite;
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(20px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #b5651d; /* Light brown border for input fields */
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #b5651d; /* Light brown background for button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #9c4e1f; /* Darker brown for hover */
+            box-shadow: 0 0 15px rgba(182, 101, 29, 0.5); /* Glow effect on hover */
+        }
+
+        p {
+            color: #333;
+        }
+
+        a {
+            color: #b5651d; /* Light brown color for links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hover effect for boxes */
+        .box:hover {
+            border: 2px solid #b5651d; /* Light brown border on hover */
+            box-shadow: 0 0 20px rgba(182, 101, 29, 0.8); /* Stronger glow on hover */
+            transform: scale(1.05);
+        }
+
+        .auth-box {
+            display: flex;
+            gap: 40px;
+        }
+
+        .auth-box .box {
+            width: 250px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h2>Sign Up</h2>
+            <form action="{{ url_for('signup') }}" method="POST">
+                <input type="text" id="name" name="name" placeholder="Full Name" required><br>
+                <input type="email" id="email" name="email" placeholder="Email" required><br>
+                <input type="password" id="password" name="password" placeholder="Password" required><br>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
